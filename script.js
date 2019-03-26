@@ -1,25 +1,13 @@
 "use strict";
 
-//select three random photos from the image directory and 
-//display them side-by-side-by-side in the browser window.
-
-//place img in an array
+//IMG SOURCE ARRAY
 var imageSrcArray = ['img/bag.jpg', 'img/banana.jpg', 'img/bathroom.jpg', 'img/boots.jpg', 'img/breakfast.jpg', 'img/bubblegum.jpg', 'img/chair.jpg',
 'img/cthulhu.jpg', 'img/dog-duck.jpg', 'img/dragon.jpg', 'img/pen.jpg', 'img/sweep.png', 'img/tauntaun.jpg', 'img/unicorn.jpg', 'img/usb.gif', 'img/water-can.jpg', 'img/wine-glass.jpg'];
 console.log (imageSrcArray);
 var imgcount = 0
 var clicks = 0
 
-
-
-
-document.getElementById("cycle").addEventListener("click", displayImg);
-
-
-
-
-
-//display 3 random imagesimg/tauntaun.jpg
+//DISPLAY FUNCTION
 function displayImg () {
     var randomA = productsArray[Math.floor(Math.random()*productsArray.length)];
     var x = document.getElementById("A");
@@ -42,7 +30,7 @@ function displayImg () {
     x.setAttribute("height", "100");
     x.setAttribute("data-name", randomC.product)
     document.body.appendChild(x);
-//no dupe
+//ANTI DUPE IF STATEMENT
     if (A.src !== B.src && A.src !== C.src && C.src !== B.src) {
         imgcount++;
         randomA.views++;
@@ -54,29 +42,30 @@ function displayImg () {
     
 };
 
-//receive clicks on those displayed images, and track those clicks for each image.
-//You'll also want to track how many times each image is displayed, for statistical purposes.
-
+//EVENT LISTENERS
 document.getElementById("A").addEventListener("click", advanceCount);
 document.getElementById("B").addEventListener("click", advanceCount);
 document.getElementById("C").addEventListener("click", advanceCount);
+document.getElementById("cycle").addEventListener("click", displayImg);
 
+//MAIN FUNCTION
 function advanceCount (event) {
     console.log(event.target.src);
     clicks++;
     console.log (clicks);
+//LOOP
 for (var i = 0; i < productsArray.length; i++) {
     if (event.target.getAttribute('data-name') === productsArray[i].product) {
         productsArray[i].votes++
         console.log(productsArray[i]);
         break
-
     }
 }
-
+//CONTINUE
 if (clicks < 25) {
     displayImg ();
 }
+//KILL EVENT LISTENERS AND DISPLAY RESULTS
 else {
     document.getElementById("cycle").removeEventListener("click", displayImg);
     document.getElementById("A").removeEventListener("click", advanceCount);
@@ -84,12 +73,10 @@ else {
     document.getElementById("C").removeEventListener("click", advanceCount);
     results();
 
-}
+    }
 };
 
-
-//constructor function
-
+//CONSTRUCTOR
 var productsArray = [];
 
 function Products(src, product) {
@@ -101,8 +88,7 @@ function Products(src, product) {
 
 };
 
-//making the objects 
-
+//OBJECTS
 var bag = new Products('img/bag.jpg', "bag", 0);
 var banana = new Products('img/banana.jpg', "banana", 0);
 var bathroom = new Products('img/bathroom.jpg', "bathroom", 0);
@@ -121,7 +107,7 @@ var usb = new Products('img/usb.gif', "usb", 0);
 var water = new Products('img/water-can.jpg', "water can", 0);
 var wine = new Products('img/wine-glass.jpg', "wine glass", 0);
 
-
+//PLACE RESULTS
 function results() {
     document.getElementById("p1").innerHTML = 'votes for bag: ' + bag.votes;
     document.getElementById("p2").innerHTML = 'votes for banana: ' + banana.votes;
