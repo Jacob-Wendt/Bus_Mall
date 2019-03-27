@@ -47,5 +47,12 @@ h1 {
   }
   button {
     font-family: 'Amatic SC', cursive;
-    margin-left: 585px;
+    margin-left: 580px;
+    border-radius: 50%;
+    font-size: 24px
+  }
+  #total {
+    font-family: 'Amatic SC', cursive;
+    font-size: 24px;
+    margin-left: 550px;
   }
