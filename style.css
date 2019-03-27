@@ -1,4 +1,51 @@
-canvas {
-    height: 50px;
-    width: 50px;
+.chart {
+    height: 750px;
+    width: 750px;
+    margin-left: 225px
 }
+h1 {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+}
+.sect {
+    float: left;
+    width: 33.33%;
+    height: 65%
+
+    
+}
+#A {
+    width: 95%;
+    height: 95%;
+    margin: 10;
+
+}
+#B {
+    width: 95%;
+    height: 95%;
+    margin: 10;
+}
+#C {
+    width: 95%;
+    height: 95%;
+    margin: 10;
+}
+
+.sect {
+    transition: box-shadow .3s;
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    border-radius:10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    float: left;
+    
+  }
+  .sect:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  }
+  button {
+    font-family: 'Amatic SC', cursive;
+    margin-left: 585px;
+  }
