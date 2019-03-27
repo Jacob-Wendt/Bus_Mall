@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
         <title>Document</title>
     </head>
     <body>
@@ -27,14 +28,23 @@
             <li id="p16"></li>
             <li id="p17"></li>
         </ul> -->
-
+        <H1>Pick One!</H1>
+        <button id="cycle">Cycle</button>
         <div>
-            <button id="cycle">Cycle</button>
-            <img id="A" src="" alt="" data-name="">
-            <img id="B" src="" alt="">
-            <img id="C" src="" alt=""> 
+            <section class="sect">
+                <img id="A" src="" alt="" data-name="">
+            </section>
+            <section class="sect">
+                <img id="B" src="" alt="">
+            </section>
+            <section class="sect">
+                <img id="C" src="" alt=""> 
+            </section>
         </div>
-        <canvas id="myChart"></canvas>
+       
+        <div class="chart">
+            <canvas id="myChart"></canvas>
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
         <script src="script.js"></script>
     </body>
